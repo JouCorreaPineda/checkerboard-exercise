@@ -62,15 +62,18 @@ body.appendChild(squareContainer);
 
 function squareCreator(){
     for(var i=0;i<81;i++){
-        var colors = ['red','blue','green','yellow','orange','purple','lightblue','white'];
-        var random_color = colors[Math.floor(Math.random() * colors.length)];
+        //var colors = ['red','blue','green','yellow','orange','purple','lightblue','white'];
+        var color1 = Math.floor(Math.random() * 255);
+        var color2 = Math.floor(Math.random() * 255);
+        var color3 = Math.floor(Math.random() * 255);
+
         if(i%2==0){
             var square = document.createElement('div');
             square.style.float="left";
             square.style.width = "11.1%";
             square.style.height="11.1%";
             square.style.paddingBottom="11.1%"
-            square.style.backgroundColor = random_color;
+            square.style.backgroundColor = "rgb("+color1.toString()+","+color2.toString()+","+color3.toString()+")";
             squareContainer.appendChild(square);
         }
         else{
@@ -79,12 +82,11 @@ function squareCreator(){
             square.style.width = "11.1%";
             square.style.height="11.1%";
             square.style.paddingBottom="11.1%"
-            square.style.backgroundColor = random_color;
+            square.style.backgroundColor = "rgb("+color1.toString()+","+color2.toString()+","+color3.toString()+")";
             squareContainer.appendChild(square); 
         }
     }
 return square;
-console.log(random_color)
 }
 
 squareCreator();
